@@ -1,0 +1,67 @@
+title: Brody Uehara – Computer Science & Mathematics Student
+logo:  # you can add own logo.
+description: Passionate programmer and Options Trader. Interested in blending Machine Learning and the Capital Markets together.
+baseurl: "/brodyu.github.io" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+
+
+# Author Settings
+author:
+  name: Brody Uehara
+  image: '/assets/img/me.png'
+  job: Computer Science & Mathematics Student
+  bio: I am currently a junior at the University of Hawaii at Manoa. This summer I am headed to New York to intern with Deutsche Bank in their Fixed Income Sales & Trading division.
+  email: brodyuehara@gmail.com
+
+
+# Contact links
+contact:
+  - name: LinkedIn
+    link: https://www.linkedin.com/in/brodyu/
+  - name: GitHub
+    link: https://github.com/brodyu
+  - name: Devpost
+    link: https://devpost.com/brodyu?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav
+
+
+# Comment Section (Disqus)
+disqus-identifier: mr-brody # add your shortname for Disqus Comment. For example mr-brown
+
+
+# Google Analytics
+# add your identifier. For example UA-99631805-1.
+google-analytics: UA-160596761-1
+
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+plugins:
+  - jekyll-sitemap
+  - jekyll/tagging
+
+# Pages Path
+defaults:
+  - scope:
+      path: '_pages'
+    values:
+      permalink: /:basename:output_ext
+
+include:
+  - _pages
+
+# Tags
+tag_page_dir:         tag
+tag_page_layout:      tag-page
+tag_permalink_style:  pretty
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+
+# Exclude from processing.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
