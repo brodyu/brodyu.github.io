@@ -1,6 +1,6 @@
 title: Brody Uehara – Computer Science & Mathematics Student
 logo:  # you can add own logo.
-description: Passionate programmer and Options Trader. Interested in blending Machine Learning and the Capital Markets together.
+description: Passionate about the Capital Markets, AI & Machine Learning
 baseurl: "/brodyu.github.io" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
@@ -10,7 +10,7 @@ author:
   name: Brody Uehara
   image: '/assets/img/me.png'
   job: Computer Science & Mathematics Student
-  bio: I am currently a junior at the University of Hawaii at Manoa. This summer I am headed to New York to intern with Deutsche Bank in their Fixed Income Sales & Trading division.
+  bio: I am currently a senior at the University of Hawaii at Manoa studying Computer Science and Mathematics. My experience and passions range from Computer Science to the financial markets.
   email: brodyuehara@gmail.com
 
 
