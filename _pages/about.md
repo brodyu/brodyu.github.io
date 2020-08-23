@@ -2,7 +2,7 @@
 layout: page
 title: About Me
 permalink: /about/
-image: ''
+image: '/assets/img/me.png'
 ---
 
 Hello. My name is Brody, and I am a junior studying Computer Science and Mathematics at the University of Hawaii at Manoa. My main academic passions lie in Artificial Intelligence and the financial markets, and a lot of my work revolves around blending the two together.
