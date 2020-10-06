@@ -5,7 +5,7 @@ permalink: /about/
 image: '/assets/img/me.png'
 ---
 
-Hello. My name is Brody, and I am a junior studying Computer Science and Mathematics at the University of Hawaii at Manoa. My main academic passions lie in Artificial Intelligence and the financial markets, and a lot of my work revolves around blending the two together.
+Hello. My name is Brody, and I am a Senior studying Computer Science at the University of Hawaii at Manoa. My passions lie in the intersection of finance and artificial intelligence. Currently, I am a Undergraduate Researcher with the Univeristy of Hawaii exploring artificial intelligence ethics.
 
 Apart from work, I love hiking and surfing in Hawaii.
 
@@ -14,22 +14,27 @@ Apart from work, I love hiking and surfing in Hawaii.
 ### **Deutsche Bank**
 #### Sales & Trading Summer Analyst
 
-I am scheduled to join Deutsche Bank in New York this summer in their Fixed Income Sales & Trading division.
+Interned with Deutsche Bank this past summer in their Fixed Income Sales & Trading division.
+<ul>
+  <li>Rotated through fixed income business lines</li>
+  <li>Devised global macro trades on LATAM currencies</li>
+</ul>
 
 ### **Oceanit Laboratories**
 #### AI Research Intern
 
-I am currently employed as an Artificial Intelligence Research Intern at Oceanit Laboratories, an environmental engineering firm located in Hawaii. My work primarily revolves around Computer Vision, and training deep learning algorithms for image classification and localization.
+Interned as an Artificial Intelligence Research Intern at Oceanit Laboratories, one of the largest engineering firms in Hawaii. 
+  - Developed Python scripts for automated data collection
+  - Trained deep learning neural networks for image detection and localization
 
 ### **Voloridge Investment Management**
 #### Trading Operations Intern
 
-Last summer, I interned at Voloridge Investment Management, an award winning quantitative hedge fund in Florida, as a Trading Operations Intern. While there, I assisted the trading team in numerous projects involving coding and modeling. My work culminated in a huge transition in hedging products and a savings of costs around four million dollars a year.
-
-### **AKAMAI Capital LLC**
-#### Quantitative Analyst intern
-
-I also work part time at AKAMAI Capital LLC, a long/short equity fund and investment arm of the AKAMAI Foundation, a rigorous financial training program for university students in Hawaii. My work at AKAMAI started a couple years back, however, currently I am working on numerous projects revolving around implementing AI and Big Data for alternative trading strategies.
+Interned at Voloridge Investment Management, an award winning quantitative hedge fund in Florida, as a Trading Operations Intern.
+<ul>
+  <li>Developed desktop applications for data collection utilizing Python</li>
+  <li>Devised hedging strategy that culminated in a costs savings of $4 million a year</li>
+</ul>
 
 ## **Projects**
 
