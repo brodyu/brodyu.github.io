@@ -24,8 +24,10 @@ Interned with Deutsche Bank this past summer in their Fixed Income Sales & Tradi
 #### AI Research Intern
 
 Interned as an Artificial Intelligence Research Intern at Oceanit Laboratories, one of the largest engineering firms in Hawaii. 
-  - Developed Python scripts for automated data collection
-  - Trained deep learning neural networks for image detection and localization
+<ul>
+  <li>Developed Python scripts for automated data collection</li>
+  <li>Trained deep learning neural networks for image detection and localization</li>
+</ul>
 
 ### **Voloridge Investment Management**
 #### Trading Operations Intern
@@ -38,26 +40,33 @@ Interned at Voloridge Investment Management, an award winning quantitative hedge
 
 ## **Projects**
 
+### **Undergraduate Research Opportunities Program**
+#### Undergraduate Researcher
+<ul>
+  <li>AI Ethics, Morality, & Governance</li>
+</ul>
+
 ### **Hawaii Annual Code Challenge: Finalist**
 #### Front-end Developer
-  - Developed a full-stack solution for a government solar financing program
-  - Automated and overhauled solar loan application processes
-  - Improved UI/UX for homeowners and solar contractors using React framework
+<ul>
+  <li>Developed a full-stack solution for a government solar financing program</li>
+  <li>Automated and overhauled solar loan application processes</li>
+  <li>Improved UI/UX for homeowners and solar contractors using React framework</li>
+</ul>
 
 ### **Titanic: Machine Learning from Disaster**
 #### Kaggle Contributor
-  - Utilized gradient boosting model to predict the survival rate of passengers on board the Titanic
-  - Cleaned data and build new features onto datasets in Python utilizing Pandas and NumPy libraries
-  - Placed in the top 20% of submissions
+<ul>
+  <li>Utilized gradient boosting model to predict the survival rate of passengers on board the Titanic</li>
+  <li>Cleaned data and build new features onto datasets in Python utilizing Pandas and NumPy libraries</li>
+  <li>Placed in the top 20% of submissions</li>
+</ul>
 
 ## **Leadership & Other**
 
 ### **AKAMAI Finance Academy**
 #### Student Mentor
 
-Along with my work at AKAMAI Capital, I help mentor high school, undergraduate, and graduate students at the AKAMAI Finance Academy. My work primarily involves leading lectures and bi-weekly meetings with the students. I also advise them through mock interviews, resume reviews, and a lot more.
-
 ### **Externships**
 #### Goldman Sachs Undergraduate Camp & JPMorgan Sophomore Edge program
 
-I am blessed to have attended both Goldman Sachs' and JPMorgan's externship programs during my sophomore year of college. These highly selective programs allowed me to network one-on-one with leadership at these investment banks.
