@@ -29,3 +29,7 @@ One concern with the multi-view representation is the optimal number of views or
 Su et al. [2] built off of the MVCNN in [1] with a modification to the rendering technique and deeper architectures. Their algorithm improved the accuracy of the MVCNN to 95% per-instance accuracy on the ModelNet40 dataset. One reason for their algorithms' strong performance is due to pretraining. To model the accuracy results of pretraining of MVCNN, Su et al. [2] measured the accuracy of two VGG-11 architectures with and without ImageNet pretraining. VGG or Visual Geometry Group is a pretrained deep convolutional neural network used for large-scale image recognition tasks. VGG-11 with ImageNet pretraining achieved a per instance accuracy of 95% compared to 91.3% without ImageNet pretraining. Su et al. [2] also implemented shaded image renderings for stronger accuracy results. Shaded image renderings were found to achieve 3.4% higher accuracy results compared to depth images and 1.4% accuracy improvement compared to binary silhouette images.
 
 Despite the need to optimize the number of views, multi-view data can be sufficiently used to classify 3D objects. They are suitable to model rigid 3D objects and allow for generalization towards other 3D features. In addition, multi-view data proves more effective in learning 3D features than volumetric representations such as ShapeNet.
+
+<p align="center">
+  <img src="/assets/img/Table1.png" />
+</p>
