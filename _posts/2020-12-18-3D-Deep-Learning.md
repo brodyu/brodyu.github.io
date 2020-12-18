@@ -19,23 +19,13 @@ While there are many applications for 3D deep learning they usually fall into on
 Multi-view data is represented as a combination of 2D images captured from multiple points of view. These images are used to capture the 3D object as a whole. Deep learning is applied to each point of view individually and features are extracted. Learned features are then merged together through view pooling. View-pooling is used to process multiple views for the 3D object in no specific order. The output of view-pooling is then passed through a deep learning neural network for a final prediction of our 3D object. Through back-propagation, we can fine tune our network parameters further. 
 
 ## MVCNN
-According to Su et al. in [1], building deep learning classifiers for 3D models upon 2D image renderings dramatically outperformed classifiers built directly on 3D representations. One reason for the outperformance is that 3D representations rely on a significant reduction in resolution. On the other hand, 2D image renderings can be trained with deep learning quickly without the need for changes in resolution. Su et al. applied a multi-view convolutional neural network on ModelNet40, a comprehensive dataset of 3D CAD models of objects, and found that their model outperformed traditional 3D models. Their multi-view convolutional neural network 
+According to Su et al. in [1], building deep learning classifiers for 3D models upon 2D image renderings dramatically outperformed classifiers built directly on 3D representations. One reason for the outperformance is that 3D representations rely on a significant reduction in resolution. On the other hand, 2D image renderings can be trained with deep learning quickly without the need for changes in resolution. Su et al. applied a multi-view convolutional neural network on ModelNet40, a comprehensive dataset of 3D CAD models of objects, and found that their model outperformed traditional 3D models. Their multi-view convolutional neural network (MVCNN) was able to achieve 89.9% accuracy with 12 views and 90.1% accuracy with 80 views for classification tasks. This is in contrast to the 3D ShapeNet’s algorithm developed by Wu et al. in [3] which only achieved a 77.3% classification accuracy.
 
+Another advantage of a MVCNN is the ubiquity of 2D image datasets. Deep learning models can learn a great deal of generic features from 2D image renderings and then be fine-tuned for specific classification problems on 3D projections. Unlike 2D images, large labeled 3D datasets are not abundant and therefore suffer as a result in terms of accuracy. Moreover, 2D image renderings allow for transformations to reduce noise, occlusion, and illumination. 
 
+One concern with the multi-view representation is the optimal number of views or 2D rendered images that should be used to build the deep learning classifier. Too few views could lead to inaccurate results, as the views don't make up a true representation of the 3D object. In contrast, too many views cause excessive computational overhead and could lead to an overfitted model. Multi-view representations add another parameter that must be optimized in order to get accurate classification results.
 
+## MVCNN with VGG-11
+Su et al. [2] built off of the MVCNN in [1] with a modification to the rendering technique and deeper architectures. Their algorithm improved the accuracy of the MVCNN to 95% per-instance accuracy on the ModelNet40 dataset. One reason for their algorithms' strong performance is due to pretraining. To model the accuracy results of pretraining of MVCNN, Su et al. [2] measured the accuracy of two VGG-11 architectures with and without ImageNet pretraining. VGG or Visual Geometry Group is a pretrained deep convolutional neural network used for large-scale image recognition tasks. VGG-11 with ImageNet pretraining achieved a per instance accuracy of 95% compared to 91.3% without ImageNet pretraining. Su et al. [2] also implemented shaded image renderings for stronger accuracy results. Shaded image renderings were found to achieve 3.4% higher accuracy results compared to depth images and 1.4% accuracy improvement compared to binary silhouette images.
 
-Jekyll also offers powerful support for code snippets:
-
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
-
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
-
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+Despite the need to optimize the number of views, multi-view data can be sufficiently used to classify 3D objects. They are suitable to model rigid 3D objects and allow for generalization towards other 3D features. In addition, multi-view data proves more effective in learning 3D features than volumetric representations such as ShapeNet.
