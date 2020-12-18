@@ -33,3 +33,23 @@ Despite the need to optimize the number of views, multi-view data can be suffici
 <p align="center">
   <img src="/assets/img/Table1.PNG" />
 </p>
+
+# Volumetric Data
+Another way 3D data can be represented is by a regular grid in 3D space. Just how pixels are the smallest element of a 2D image rendering, a voxel is a basic 3D unit that characterizes the volume in three dimensions. The process of converting geometric objects into a set of voxels is called voxelization. Voxelation can be used to create 3D computer aided design (CAD) models, model the brain in three dimensions from CT and fMRI scans, and model sediment layers for geology. The voxelized object is then run through a 3D convolutional neural network or volumetric convolution. 3D convolutions utilize a kernel that moves in 3 directions (x, y, z) with input and output data in four dimensions. 
+
+As one can imagine, running 3D convolutions with four dimensional kernels can be computationally expensive. A more efficient volumetric approach is octree generating networks. Coined by Tatarchenko et al. in [5], Octree-based networks model 3D objects as a hierarchical structure. A quadtree structure recursively decomposes voxels to divide the scene into cubes that are inside or outside the 3D object. This approach is better able to capture fine details of a 3D object with less computational intensity than a voxel-based approach.
+
+## ShapeNet
+One of the very first algorithms to exploit the geometry of voxels was ShapeNet. Developed by Wu et al. in [3], ShapeNet models 3D objects as a probability distribution of binary variables on a 3D voxel grid. ShapeNet utilizes a Convolutional Deep Belief Network, a type of deep learning neural network that was adopted from 2D deep learning to model 3D objects, to represent the probability distribution of binary variables. ShapeNet consists of five layers: an input layer, 3 convolutional layers, and an output layer. These layers are pre-trained using multiple methods. Despite ShapeNet’s simplistic strategy to classify 3D objects based on volumetric data, it suffers from memory storage limitations and information loss. Due to the additional dimension of the convolutional layer, ShapeNet cannot process large amounts of high-resolution data. In contrast, if the resolution is too low, more points fall into a voxel, which increases the information loss. Therefore, finding an optimal resolution is critical to minimize the information loss and computational time of volumetric-based algorithms.
+
+## VoxNet
+Building upon the concept of 3D convolutions, Maturana and Scherer in [4] developed VoxNet. The VoxNet architecture consists of an input layer which can take different 3D data representations, like RGB-D, LIBAR point clouds, and 3D CAD models, as input. The input layer is constructed as a volumetric occupancy grid of 32x32x32 voxels. VoxNet then runs the input through two convolutional layers, a pooling layer, and two fully connected layers. In comparison to ShapeNet, VoxNet outperforms ShapeNet on the ModelNet40 dataset with an accuracy of 83% compared to ShapeNet’s accuracy of 77.3%.
+
+## LightNet
+In light of the huge computational requirements of volumetric-based approaches, Zhi et al. proposed LightNet in [6]. LightNet is a lightweight 3D convolutional neural network for real-time 3D object recognition. Based on VoxNet, LightNet leverages multitask learning to improve accuracy and efficiency by learning multiple features at the same time. Moreover, LightNet utilizes a batch normalization operation between the convolutional and activation operations to achieve faster convergence. In terms of accuracy, LightNet trained from scratch achieved an accuracy of 82.9% on ModelNet40. This score increases dramatically if LightNet is pretrained on ModelNet10 with an accuracy of 86.9% on ModelNet40. In addition to increased accuracy, LightNet is able to classify a 3D object within 5ms. This means that LightNet can be utilized for real-time object recognition tasks.
+
+While volumetric-based representations like ShapeNet, VoxNet, and LightNet are simple, they struggle in terms of accuracy and computation time compared to multi-view representations. Despite their limitations, volumetric-based approaches prove to be effective for real-time object recognition tasks where recognition time is of the essence.
+
+<p align="center">
+  <img src="/assets/img/Table2.PNG" />
+</p>
