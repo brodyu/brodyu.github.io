@@ -53,3 +53,21 @@ While volumetric-based representations like ShapeNet, VoxNet, and LightNet are s
 <p align="center">
   <img src="/assets/img/Table2.PNG" />
 </p>
+
+# RGB-D Data
+RGB-D image representations are gaining popularity due to the proliferation of novel RGB-D sensors and cameras like Microsoft’s Kinect due to their low costs and simplicity. As the name suggests, RGB-D data provides color images and corresponding depth images that are color, illumination, rotation, and scale invariant. RGB-D datasets can be utilized for many different applications from object classification, scene classification, pose/gesture classification, and much more.
+
+Traditional 2D RGB image renderings only provide information on an object’s appearance. While computer vision techniques exist to decipher common variations in foreground and background, RGB-D images provide a wealth of information to quickly solve these limitations of traditional RGB image renderings. The core of RGB-D data lies in the depth image. This depth image is generated from a range sensor that is robust to variations in in color, illumination, rotation, and scale.
+
+On November 4th, 2010, Microsoft released their Kinect sensor. The Kinect sensor was originally used to eliminate the game controller from Xbox video games. However, the Kinect was soon adopted by academia as a cheaper means to obtain RGB-D images. Due to its low costs and simplicity, RGB-D datasets are widely available compared to other 3D datasets such as point clouds.
+
+## Two-Stream CNN
+One of the first deep learning architectures applied to RGB-D data was developed by Socher et al. in [7]. The authors proposed a two-stream convolutional neural network architecture that utilizes both convolutional and recursive layers for object classification. The first stream of RGB and depth data is run through a convolutional layer. This single convolutional layer provides useful translational invariance. The resulting descriptor is then fed through multiple layers of recursive neural networks. These recursive layers with various weights allow the model to learn compositional features and parts of the object. Finally, the results from both the RGB stream and depth stream are combined and merged through a SoftMax classifier to obtain the classification of the 3D object.
+
+One of the benefits of this approach is that the input is simple. RGB-D data is not computationally intensive compared to other inputs such as volumetric voxels or point clouds. This makes RGB-D approaches fast and efficient.
+
+In terms of accuracy, when performed on the RGB-D dataset of Lai et al. in [8], the CNN-RNN developed by Socher et al. in [7] outperformed traditional machine learning methods that were modified to perform on 3D RGB-D datasets.
+
+<p align="center">
+  <img src="/assets/img/Table3.PNG" />
+</p>
