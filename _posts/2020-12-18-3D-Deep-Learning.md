@@ -31,5 +31,5 @@ Su et al. [2] built off of the MVCNN in [1] with a modification to the rendering
 Despite the need to optimize the number of views, multi-view data can be sufficiently used to classify 3D objects. They are suitable to model rigid 3D objects and allow for generalization towards other 3D features. In addition, multi-view data proves more effective in learning 3D features than volumetric representations such as ShapeNet.
 
 <p align="center">
-  <img src="/assets/img/Table1.png" />
+  <img src="/assets/img/Table1.PNG" />
 </p>
