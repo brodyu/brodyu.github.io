@@ -71,3 +71,59 @@ In terms of accuracy, when performed on the RGB-D dataset of Lai et al. in [8], 
 <p align="center">
   <img src="/assets/img/Table3.PNG" />
 </p>
+
+## CNN with Transfer Learning
+To build off this, Alexandre in [9] modified CNN-RNN to enable transfer learning between input channels. To do this, four independent convolutional neural networks are utilized, one for each channel (three color channels and one depth channel), instead of a single CNN. After training each CNN for every channel, the results are then combined to produce a final decision. Transfer learning can be applied between the weights of the CNNs to obtain better error and time results.
+
+Deep learning can be effectively applied to RGB-D data for object classification. Furthermore, separately running each input channel on its own CNN provides more accurate results. Furthermore, transfer learning can also be applied to save computational time during the training process. However, RGB-D data has its limitations. For one, RGB-D methods do not learn the full geometry of a 3D object. Instead, they can only infer about the objects shape with the information from the additional depth channel. Therefore, multi-view representations and volumetric data provide better insights into the full geometry of a 3D object.
+
+# Point Clouds 
+Point clouds are sets of geometric data points in space. A single point cloud consists of an X, Y, and Z coordinate. If there is color, the point cloud saves the RGB intensity and becomes four dimensional. 
+
+To generate point clouds, a 3D scanner is needed to scan an object. Through a lengthy iterative process, the scanner subsequently generates point cloud data of the specific object. The scanner captures each point clouds specific locational coordinate as well as its color intensity. 
+
+Unlike voxels, multi-view image renderings, or RGB-D data, point clouds are non-Euclidean meaning they are not in a regular format and lack the ability to apply deep learning architectures. For this reason, most researchers typically transform point cloud data to regular 3D voxels or multi-view images. However, transforming point clouds can impose limitations like increasing the amount of memory required and introducing quantization artifacts that causes invariances in our data. These limitations make adapting deep learning architectures of accept raw point cloud data an important research topic.
+
+## PointNet
+One of the first deep learning architectures to accept raw 3D point cloud data as an input was PointNet proposed by Qi et al. in [10]. PointNet consists of three main modules: a symmetric function layer, a combination structure, and a join alignment network. The symmetric function processes all the data into one canonical form and learns the key points of the point cloud data. This information is fed into the RNN module which learns the point cloud. This RNN module is invariant to the sequence of the input order of point clouds. Finally, the join alignment network aggregates all the resulting features using the max-pooling operation. 
+
+PointNet’s primary benefit is that it can exploit the geometry of point clouds directly unlike traditional point cloud methods. PointNet also proved robust to missing data. Qi et al. conducted a robustness test on PointNet and VoxNet by randomly dropping out input points by a certain ratio prior to training. VoxNet’s accuracy dramatically dropped when half of the input points were missing, from 86.3% to 46% accuracy. On the other hand, PointNet’s accuracy only dropped by 3.7%. The reason PointNet is robust to missing data is that it utilizes critical points to summarize the shape and therefore does not need every point in the dataset. 
+
+Another benefit to PointNet is that it has low complexity. While other architectures like MVCNNs offer higher classification accuracy, PointNet is more efficient in terms of computational cost. Qi et al. measured the computational performance of PointNet and found that it was able to process more than one million points per second for classification tasks. This gives PointNet the potential to be used for real-time applications. 
+
+Despite PointNet’s efficient time complexity and robustness to missing data, is it not able to fully exploit the object’s local structure. Exploiting an object’s structure is important for convolutional architecture accuracy because CNNs take in data defined on regular grids as an input and are able to progressively capture features at increasingly larger scales. Without local structure, PointNet’s accuracy suffers.
+
+## PointNet++
+Building upon the foundations of PointNet, Qi et al. proposed PointNet++ in [11]. PointNet++ aims to learn local features by exploiting metric space distances in a hierarchical fashion. PointNet++ works by first partitioning the set of points into overlapping regions by a distance metric. Local features are then extracted to capture the geometric structures. This extraction process is repeated until every feature of the whole point set is obtained.
+
+Qi et al. tested PointNet++ on the ModelNet40 dataset and were able to achieve a higher classification accuracy than the original PointNet architecture and MVCNN. These results prove that PointNet++ can learn features efficiently and accurately. 
+
+One of the drawbacks of PointNet++ is its complexity. PointNet++’s architecture is complex which increases the size of features and the computational intensity required to obtain these features.
+
+In all, point clouds show promising results in the field of object classification. Architectures like PointNet and PointNet++ allow researchers to derive high level features directly from point cloud inputs. Despite their high accuracy in object classification tasks, point cloud methods suffer in terms of computational time due to the unstructured nature of point clouds representations. 
+
+## Kd-Networks
+A notable deep learning architecture that does not operate on point clouds directly is Kd-Networks. Proposed by Klovkov et al. in [12], Kd-Networks utilize a common indexing structure called a kd-tree to perform computations, share learnable parameters, and compute hierarchical representations.
+
+To apply deep learning to CNNs in three dimensions, academics traditionally voxelized 3D models onto uniform voxel grids. The process of voxelization usually resulted in large memory requirements and large computational intensity. Kd-Networks solve this problem by mimicking the architecture of CNNs with kd-trees. 
+
+Klovkov et al. measured the accuracy of Kd-Networks with various data augmentations on the ModelNet10 and ModelNet40 datasets for 3D object classification. The data augmentations that were measured were deterministic kd-trees, randomized kd-trees, translation augmentation, and anisotropic scaling augmentation. During training either a deterministic or randomized kd-tree is constructed and used to perform the forward-backward pass in the Kd-Network. Data augmentations are then applied during both training and testing and the classification accuracy of each is recorded. Translation augmentations (TR) are proportional translations along every axis. Anisotropic scaling augmentations (AS) involve rescaling over two horizontal axes by a number sampled from the range of 0.66 to 1.5.
+
+<p align="center">
+  <img src="/assets/img/Table4.PNG" />
+</p>
+
+Based off Klovkov’s benchmarks, Kd-Networks were able to accurately classify 3D objects in both the ModelNet10 and ModelNet40 datasets. Although Kd-Network’s classification accuracy falls short of MVCNNs, data augmentations applied to kd-trees allowed the algorithm to outperform PointNet. Compared to the other top-performing convolutional architectures, Kd-Networks are efficient and therefore have low computational intensity.
+
+Due to the efficiency and accuracy of Kd-Networks, Klovkov suggests other hierarchical 3D space partitions like octrees, PCA-trees and bounding volume hierarchies could also be investigated and researched for deep learning architectures.
+
+# Conclusion
+As the demand for new technologies such as autonomous driving, virtual reality, and 3D medical image processing develops, the need for quality deep learning architectures on 3D data representations will continue to grow. This survey showed the numerous deep learning architectures on multi-view, volumetric, RGB-D, and point cloud data representations. 
+
+Multi-view data representations provide accurate solutions to model and classify 3D objects. They model 3D objects through a series of views that are individually ran through pretrained CNNs. The results of each view are then collated and fed through a final CNN for a classification decision. Multi-view representations present a challenge with the optimized number of views one should use within the architecture. If the number of views is too low, MVCNNs will not model the full geometry of the object. However, if the number of views is too high, it could lead to unnecessary computational intensity and an overfitted model. 
+
+Volumetric representations utilized voxels to represent 3D objects through a process of conversion called voxelization. While volumetric approaches like ShapeNet, VoxNet, and LightNet provide simple yet effective deep learning architectures, they suffer against more accurate multi-view methods and from computational intensity. 
+
+RGB-D image renderings are developed through a specialized RGB-D camera like Microsoft’s Kinect. To classify an object, its RGB and depth image are passed through two parallel CNNs. The resulting features are collated by a SoftMax classifier to obtain the classification result. Despite having an efficient runtime with the use of transfer learning, deep learning techniques on RGB-D image renderings do not learn the full geometry of the object. However, RGB-D sensors and cameras are easy to obtain and simple to use which contributes to the surge in RGB-D data and research.
+
+Unlike the previous 3D data representations, point clouds pose an interesting topic due to their lack of structure. Traditionally, point clouds were transformed to regular 3D voxels to apply deep learning techniques. However, recent architectures such as PointNet and PointNet++ allow the direct input of point clouds into their deep learning architecture. Moreover, alternative hierarchical partitioning structures like Kd-Networks were developed to mimic CNNs with the use of kd-trees. Kd-Networks proved accurate and efficient when compared against other deep learning architectures. While the PointNet architecture family can classify 3D objects to a high degree of accuracy, they suffer in terms of computational intensity due to their unstructured representation. Despite their limitations, point clouds are a trending topic in research due to their potential to be used in a wide variety of applications from virtual reality to autonomous driving.
