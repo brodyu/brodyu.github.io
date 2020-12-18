@@ -2,7 +2,7 @@
 layout: post
 title:  "A Survey of Deep Learning Methods for 3D Object Classification"
 date:   2020-12-18 18:05:55 +0300
-image:  '/assets/img/03.jpg'
+image:  '/assets/img/data.jpg'
 tags:   CV 
 ---
 # Abstract
