@@ -128,6 +128,8 @@ RGB-D image renderings are developed through a specialized RGB-D camera like Mic
 
 Unlike the previous 3D data representations, point clouds pose an interesting topic due to their lack of structure. Traditionally, point clouds were transformed to regular 3D voxels to apply deep learning techniques. However, recent architectures such as PointNet and PointNet++ allow the direct input of point clouds into their deep learning architecture. Moreover, alternative hierarchical partitioning structures like Kd-Networks were developed to mimic CNNs with the use of kd-trees. Kd-Networks proved accurate and efficient when compared against other deep learning architectures. While the PointNet architecture family can classify 3D objects to a high degree of accuracy, they suffer in terms of computational intensity due to their unstructured representation. Despite their limitations, point clouds are a trending topic in research due to their potential to be used in a wide variety of applications from virtual reality to autonomous driving.
 
+# References
+
 [1]	Hang Su, Subhransu Maji, E. Kalogerakis, & E. Learned-Miller (2015). Multi-view Convolutional Neural Networks for 3D Shape Recognition2015 IEEE International Conference on Computer Vision (ICCV), 945-953.
 
 [2]	Jong-Chyi Su, Matheus Gadelha, R. Wang, & Subhransu Maji (2018). A Deeper Look at 3D Shape ClassifiersArXiv, abs/1809.02560.
