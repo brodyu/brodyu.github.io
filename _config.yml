@@ -9,7 +9,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 author:
   name: Brody Uehara
   image: '/assets/img/me.png'
-  job: Machine Learning Research Assistant
+  job: Machine Learning Research Assistant at the University of Hawaii
   bio: I am a senior at the University of Hawaii majoring in Computer Science. I’m currently helping forcast hydrological streamflows with machine learning as a research assistant.
   email: brodyuehara@gmail.com
 
