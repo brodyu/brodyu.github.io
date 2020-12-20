@@ -129,16 +129,29 @@ RGB-D image renderings are developed through a specialized RGB-D camera like Mic
 Unlike the previous 3D data representations, point clouds pose an interesting topic due to their lack of structure. Traditionally, point clouds were transformed to regular 3D voxels to apply deep learning techniques. However, recent architectures such as PointNet and PointNet++ allow the direct input of point clouds into their deep learning architecture. Moreover, alternative hierarchical partitioning structures like Kd-Networks were developed to mimic CNNs with the use of kd-trees. Kd-Networks proved accurate and efficient when compared against other deep learning architectures. While the PointNet architecture family can classify 3D objects to a high degree of accuracy, they suffer in terms of computational intensity due to their unstructured representation. Despite their limitations, point clouds are a trending topic in research due to their potential to be used in a wide variety of applications from virtual reality to autonomous driving.
 
 [1]	Hang Su, Subhransu Maji, E. Kalogerakis, & E. Learned-Miller (2015). Multi-view Convolutional Neural Networks for 3D Shape Recognition2015 IEEE International Conference on Computer Vision (ICCV), 945-953.
+
 [2]	Jong-Chyi Su, Matheus Gadelha, R. Wang, & Subhransu Maji (2018). A Deeper Look at 3D Shape ClassifiersArXiv, abs/1809.02560.
+
 [3]	Zhirong Wu, Shuran Song, Aditya Khosla, Fisher Yu, Linguang Zhang, Xiaoou Tang, and Jianxiong Xiao. 2015. 3D ShapeNets: A Deep Representation for Volumetric Shapes. In The IEEE Conference on Computer Vision and Pattern Recognition (CVPR). IEEE
+
 [4]	Daniel Maturana and Sebastian Scherer. 2015. Voxnet: A 3d convolutional neural network for real-time object recognition. In Intelligent Robots and Systems (IROS), 2015 IEEE/RSJ International Conference on. IEEE, 922–928.
+
 [5]	Maxim Tatarchenko, Alexey Dosovitskiy, and Thomas Brox. 2017. Octree generating networks: Efficient convolutional architectures for high-resolution 3d outputs. CoRR, abs/1703.09438 (2017).
+
 [6]	Shuaifeng Zhi, Yongxiang Liu, Xiang Li, and Yulan Guo. 2018. Toward real-time 3D object recognition: A lightweight volumetric CNN framework using multitask learning. Computers & Graphics 71 (2018), 199 – 207.
+
 [7]	Richard Socher, Brody Huval, Bharath Bath, Christopher D Manning, and Andrew Y Ng. 2012. Convolutional-recursive deep learning for 3d object classification. In Advances in Neural Information Processing Systems. NIPS, 656–664.
+
 [8]	K. Lai, L. Bo, X. Ren, and D. Fox. A Large-Scale Hierarchical Multi-View RGB-D Object Dataset. In ICRA, 2011
+
 [9]	Luís A Alexandre. 2016. 3D object recognition using convolutional neural networks with transfer learning between input channels. In Intelligent Autonomous Systems 13. Springer, 889–898.
+
 [10]	Charles R Qi, Hao Su, Kaichun Mo, and Leonidas J Guibas. 2017. Pointnet: Deep learning on point sets for 3d classification and segmentation. Proc. Computer Vision and Pattern Recognition (CVPR), IEEE 1, 2 (2017), 4.
+
 [11]	Charles R Qi, Li Yi, Hao Su, and Leonidas J Guibas. 2017. Pointnet++: Deep hierarchical feature learning on point sets in a metric space. In Advances in Neural Information Processing Systems. NIPS, 5105–5114
+
 [12]	Roman Klokov and Victor Lempitsky. 2017. Escape from cells: Deep kd-networks for the recognition of 3d point cloud models. In 2017 IEEE International Conference on Computer Vision (ICCV). IEEE, 863–872.
+
 [13]	Yassine Ghouzam. 2017. Intorduction to CNN Keras – 0.997 (top 6%). Retrieved December 14, 2020 from https://www.kaggle.com/yassineghouzam/introduction-to-cnn-keras-0-997-top-6
+
 [14]	Deep Learning Advances on Different 3D Data Representations: A Survey - Scientific Figure on ResearchGate. Available from: https://www.researchgate.net/figure/Two-stream-CNNs-for-3D-object-recognition-on-RGB-D-data-80_fig3_326870805 [accessed 14 Dec, 2020]
