@@ -9,8 +9,8 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 author:
   name: Brody Uehara
   image: '/assets/img/me.png'
-  job: Computer Science & Mathematics Student
-  bio: I am currently a senior at the University of Hawaii at Manoa studying Computer Science and Mathematics. My experience and passions range from Computer Science to the financial markets.
+  job: Machine Learning Research Assistant
+  bio: I am a senior at the University of Hawaii majoring in Computer Science. I’m currently helping forcast hydrological streamflows with machine learning as a research assistant.
   email: brodyuehara@gmail.com
 
 
