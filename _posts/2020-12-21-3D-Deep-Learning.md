@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Easy Portfolio Management Tool for Smaller Funds"
-date:   2020-06-20 18:05:55 +0300
-image:  '/assets/img/data.jpg'
-tags:   TWS, IB
+title:  "Deep Learning Neural Network on 3D Voxelized Digits"
+date:   2020-12-21 18:05:55 +0300
+image:  '/assets/img/3D MNIST Cover.png'
+tags:   CV
 ---
 # Introduction
 The objective of this project was to easy import currently invested stock and option positions from Trader Workstation into an easy to manipulate CSV file. 
