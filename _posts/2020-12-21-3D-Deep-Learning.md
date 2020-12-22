@@ -64,6 +64,7 @@ For further research, one should implement a more sophisticated approach. Given 
 This implementation relies on the 2D and 3D MNIST datasets. Due to the size of these files, the links to each of the datasets will be listed here as they are too large for upload to GitHub:
 * [MNIST Dataset](https://www.kaggle.com/c/digit-recognizer/data)
 * [3D MNIST Dataset](hhttps://www.kaggle.com/daavoo/3d-mnist)
+
 The link to the GitHub repository that stores our 3D notebook implementation can be found [here](https://github.com/brodyu/3D_Deep_Learning)
 
 
