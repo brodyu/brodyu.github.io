@@ -53,6 +53,19 @@ for tweet in public_tweets:
   print("")
 ```
 
+Within the main method of our script, we also need to set the parameters of our search:
+* search: utilizes the input method to take in the search term we want to pull tweets for
+* count: number of tweets to pull during the API call (100)
+* result_type: set to 'recent' to only pull the most recent tweets or 'popular' to pull only the most popular tweets
+* until: designates our time horizon of tweets to pull from. If you only use Twitter's basic developer account this needs to be set within one week of the current date
+* lang: language setting to filter tweets (en for english)
+
+Once our parameters are set, our script can now pull tweets en masse and run natural lanugage processing to gain sentiment. 
+
+# Results
+While this scripts effectivley collates consumer sentiment on a particular search term on Twitter, the prebuilt TextBlob library fails to accurately describe consumer sentiemnt with informal language over Twitter. Words that usually describe positive sentiment in an informal tone of voice is usually branded negative by TextBlob. This makes our script negatively biased and hence inaccurate. 
+
+For further research, one should implement a natural language processing algorithm that is specifically designed for Twitter's tweets and an informal tone of voice. 
 
 
 # Where to find
