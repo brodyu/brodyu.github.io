@@ -10,8 +10,7 @@ This project is a quick way to aggregate tweets and perform sentiment analysis. 
 
 # Requirements
 This library utilizes a number of libraries to automate data capture and analysis. These specific libraries and their function is listed below:
-* Twitter API:
-  * In order to use Twitter's API, you need to sign up for a developer account and submit a project proposal for the API keys. Click on the link [here](https://developer.twitter.com/en) to sign up for a developer account.
+* Twitter API: In order to use Twitter's API, you need to sign up for a developer account and submit a project proposal for the API keys. Click on the link [here](https://developer.twitter.com/en) to sign up for a developer account.
 * Tweepy: The Tweepy library is used to authenticate the Twitter API
 * TextBlob: is a pretrained NLP model that we will run across our tweets. 
 
