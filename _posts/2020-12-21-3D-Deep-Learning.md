@@ -30,7 +30,7 @@ To get our data ready for use in a 3D convolution, we must first transform the d
 To build our convolutional neural network we will utilize the Keras Sequential API. This API allows the user to define each layer of the model’s architecture individually starting from the input layer. Our model’s architecture is based off a Kaggle notebook by Ghouzam in [13]. Ghouzam’s model was able to achieve 98% classification accuracy upon the 2D MNIST training dataset and 99% classification accuracy on validation data. Our model incorporates a similar architecture like that is adjusted to handle 3D volumetric data. Ghouzam’s classification accuracy and loss results are displayed below. 
 
 <p align="center">
-  <img src="/assets/img/ghouzam.jpg" />
+  <img src="/assets/img/MNISTresults.jpg" />
 </p>
 
 The first layer of our model is the convolutional (Conv3D) layer. This layer creates a convolution kernel with the input to create a tensor of outputs. We will use 32 filters for the first two 3D convolution layers and 64 filters for the last two 3D convolution layers. These two pairs of filter layers each capture different characteristics by transforming parts of the image using a kernel filter. The kernel filter we utilize is a cube of size (5, 5, 5) for the first two layers and a similar cube of size (3, 3, 3) for the second pair of layers. Within each convolution layer we utilize the rectified linear activation function (ReLU). ReLU is one of the most commonly used activation functions in deep learning. The function outputs only a positive input. If the input is negative it returns 0. Despite the simplicity of ReLU, the function is effective in handling non-linearities and interaction events. 
