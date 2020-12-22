@@ -15,6 +15,43 @@ This library utilizes a number of libraries to automate data capture and analysi
 * TextBlob: is a pretrained NLP model that we will run across our tweets. 
 
 # Implementation
+Once you have made a developer account with Twitter, you gain access to pairs of consumer keys and access tokens. Copy and paste your codes as such:
+
+```python
+# Consumer API keys:
+consumer_key = "___"
+consumer_key_secret = "___"
+# Access token & access token secret
+access_token = "___"
+access_token_secret = "___"
+```
+
+Once your keys are set, we can autenticate our requests with Tweepy's OAuthHandler method.
+```python
+auth = tweepy.OAuthHandler(consumer_key, consumer_key_secret)
+auth.set_access_token(access_token, access_token_secret)
+api = tweepy.API(auth)
+```
+
+Now that our authentication is complete, all we need to do is run Twitter's search method. The line of code below requests a keyword to search for and returns a list of tweets that represents the results:
+```python
+public_tweets = api.search(q = self.search, count = self.count, result_type = self.result_type, until = self.until, lang = self.lang)
+```
+
+In order to gain sentiment on each tweet, we want to run the TextBlob library on each tweet to gain its sentiment score with the sentiment method. TextBlob's sentiment polarity score ranges from -1.0 (negative sentiment) to 1.0 (positive sentiment).
+```python
+for tweet in public_tweets:
+  print(tweet.text)
+  analysis = TextBlob(tweet.text)
+  print(analysis.sentiment)
+  if analysis.sentiment[0]>0:
+    print('Positive')
+    positive_count += 1
+  else:
+    print('Negative')
+    negative_count += 1
+  print("")
+```
 
 
 
