@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Deep Learning Neural Network on 3D Voxelized Digits"
+title:  "Twitter Sentiment Analysis with Natural Language Processing"
 date:   2020-03-11 18:05:55 +0300
 image:  '/assets/img/Twitter.jpg'
 tags:   NPL
