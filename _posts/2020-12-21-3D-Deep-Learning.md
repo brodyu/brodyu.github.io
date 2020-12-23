@@ -27,7 +27,7 @@ The dataset used for implementing our CNN classifier is the 3D MNIST dataset. Th
 To get our data ready for use in a 3D convolution, we must first transform the data into a four-dimensional shape. The four dimensions of our data are classified by: length, width, height, and color channel RGB. Finally, we convert all our target variables to binary class matrix utilizing TensorFlow’s to_categorical method. This method takes the value of 10 for the number of classes parameter because we are encoding the labels from the digits 0 through 9. After this is completed, our data is ready for input into our 3D CNN. 
 
 # Modeling
-To build our convolutional neural network we will utilize the Keras Sequential API. This API allows the user to define each layer of the model’s architecture individually starting from the input layer. Our model’s architecture is based off a Kaggle notebook by Ghouzam in [13]. Ghouzam’s model was able to achieve 98% classification accuracy upon the 2D MNIST training dataset and 99% classification accuracy on validation data. Our model incorporates a similar architecture like that is adjusted to handle 3D volumetric data. Ghouzam’s classification accuracy and loss results are displayed below. 
+To build our convolutional neural network we will utilize the Keras Sequential API. This API allows the user to define each layer of the model’s architecture individually starting from the input layer. Our model’s architecture is based off a Kaggle notebook by Ghouzam in [1]. Ghouzam’s model was able to achieve 98% classification accuracy upon the 2D MNIST training dataset and 99% classification accuracy on validation data. Our model incorporates a similar architecture like that is adjusted to handle 3D volumetric data. Ghouzam’s classification accuracy and loss results are displayed below. 
 
 <p align="center">
   <img src="/assets/img/MNISTresults.jpg" />
@@ -67,4 +67,6 @@ This implementation relies on the 2D and 3D MNIST datasets. Due to the size of t
 
 The link to the GitHub repository that stores our 3D notebook implementation can be found [here](https://github.com/brodyu/3D_Deep_Learning)
 
+# Reference
 
+[1]	Yassine Ghouzam. 2017. Intorduction to CNN Keras – 0.997 (top 6%). Retrieved December 14, 2020 from https://www.kaggle.com/yassineghouzam/introduction-to-cnn-keras-0-997-top-6
